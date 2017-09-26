@@ -66,11 +66,13 @@ end
 # Gems used only in testing
 group :test do
   gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'single_test'
-  gem 'test-unit'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
