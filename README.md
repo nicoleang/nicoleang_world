@@ -41,18 +41,18 @@
 
 <p>The REMOTE can be named whatever you want, but convention usually dictates that you name it origin. For github, the URL is <a href="mailto:git@github.com">https://github.com</a>, and your REPO is namespaced under your github_id.</p>
 
-<p>But wait just a moment: Before we finally push, we should add a few things to our .gitignore file for better consistency throughout our revision history. Let’s start with the coverage directory by adding the following code to our .gitignore file:</p>
+<p>But wait just a moment: Before we finally push, we should add a few things to our .gitignore file for better consistency throughout our revision history. Let’s start with the <code>coverage</code> directory (created whenever we run tests using SimpleCov) by adding the following code to our .gitignore file:</p>
 
-<pre><code>	# Ignore all test coverage files
-	/coverage/*
+<pre><code>  # Ignore all test coverage files
+  /coverage/*
 </code></pre>
 
 <p>This will ensure that changes to our coverage files (which will fluctuate constantly based on our local tests) will never get recorded in our commmits. If we didn't do this, this could cause merge conflicts later on, especially in a project involving multiple contributors who are all testing and changing the same files.</p>
 
 <p>And while we’re at it, if you are a macOS user, run the following two lines in the command line to ignore .DS_Store files across all directories and subdirectories of your git repositories. This will ensure you are never pushing changes regarding this file, which changes constantly and is contained within most folders on the macOS file system by default (for local purposes). Note that there are various situations where you might want to use .gitignore to allow for a cleaner and more consistent revision history, but we will not go over them all here.</p>
 
-<pre><code>	echo .DS_Store >> ~/.gitignore_global
-	git config --global core.excludesfile ~/.gitignore_global
+<pre><code>  echo .DS_Store >> ~/.gitignore_global
+  git config --global core.excludesfile ~/.gitignore_global
 </code></pre>
 
 <p>Now that you have set up your remote and ignored the proper files, add the remote repository to your repo.  Push your code to github (git push -u origin master), and verify that it now shows up on github.com.<br>
